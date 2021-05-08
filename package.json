@@ -1,0 +1,25 @@
+{
+  "name": "@ack_inc/utils",
+  "version": "1.0.0",
+  "description": "Collection of utility functions I find myself needing across multiple projects",
+  "license": "MIT",
+  "author": "Anirudh Nimmagadda <anirudh.nimmagadda@gmail.com>",
+  "engines": {
+    "node": ">=12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ackinc/node-utils"
+  },
+  "bugs": "https://github.com/ackinc/node-utils/issues",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "eslint": "^7.25.0",
+    "eslint-plugin-jest": "^24.3.6",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1"
+  }
+}
