@@ -92,4 +92,4 @@ See the tests in `lib/group-by-multi-keys.test.js` for usage examples
 
 - Improve `groupByMultiKeys`
 
-  - ensure temporary attrs added to records don't overwrite an existing key
+  - [Blocking v1.0.0 release] ensure temporary attrs added to records don't overwrite an existing key
