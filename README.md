@@ -17,7 +17,7 @@ Use case: password or temporary token generation
 | Name        | Type   | Required? | Description                                                       | Default | Comments                |
 | ----------- | ------ | :-------: | ----------------------------------------------------------------- | ------- | ----------------------- |
 | nChars      | number |     Y     | The length of the string to generate                              |         | Must be a whole number. |
-| constraints | object |     Y     | Object specifying what characters can be in the generated string. | {}      |                         |
+| constraints | object |     N     | Object specifying what characters can be in the generated string. | {}      |                         |
 
 `constraints` may have the following keys:
 
@@ -79,6 +79,49 @@ It may not be the case that there is a common key for all the records in a group
 #### Usage
 
 See the tests in `lib/group-by-multi-keys.test.js` for usage examples
+
+---
+
+### formatMobileNumber(mobileNumber, formatString)
+
+Format a mobile number (must include country code) in different ways
+
+#### Parameters
+
+| Name         | Type   | Required? | Description                                                          | Default | Comments                                                           |
+| ------------ | ------ | :-------: | -------------------------------------------------------------------- | ------- | ------------------------------------------------------------------ |
+| mobileNumber | string |     Y     | The mobile number to be formatted                                    |         | An error is thrown if `mobileNumber` does not contain country code |
+| formatString | string |     N     | String describing how the provided mobile number should be formatted | "+CASR" |                                                                    |
+
+In `formatString`, only the following characters will be transformed:
+
+| Character | Transformed into                              |
+| --------- | --------------------------------------------- |
+| C         | country code                                  |
+| A         | area code (first 3 digits after country code) |
+| S         | subscriber number (next 3 digits)             |
+| R         | remaining digits                              |
+
+Any other characters will appear as-is in the returned string
+
+#### Return value
+
+| Type   | Description                 |
+| ------ | --------------------------- |
+| string | The formatted mobile number |
+
+#### Usage
+
+```
+const { formatMobileNumber: format } = require('@ack_inc/utils');
+console.log(format(<anything but a mobile number with country code>)); //=> throws Error
+
+const mobile = "+1 123 456 7890";
+expect(format(mobile)).toEqual("+11234567890");
+expect(format(mobile, "+CASR")).toEqual("+11234567890");
+expect(format(mobile, "+C A S R")).toEqual("+1 123 456 7890");
+expect(format(mobile, "+C (A) S-R")).toEqual("+1 (123) 456-7890");
+```
 
 ## To Do
 
