@@ -59,10 +59,10 @@ Use case: you have an array of records (of people, say); the records are from mu
 
 #### Parameters
 
-| Name    | Type           | Required? | Description                               | Default | Comments                                                                                                                                                    |
-| ------- | -------------- | :-------: | ----------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| records | Array\<object> |     Y     | Array of records to group                 |         | A TypeError is thrown if `records` is not an array with at least one element                                                                                |
-| getKeys | Function       |     Y     | Function to generate keys for each record |         | Should take a record as the sole param, and return an array of keys that function as "record identifiers"; signature is `getKeys(record: object): Array<T>` |
+| Name    | Type           | Required? | Description                               | Default | Comments                                                                                                                           |
+| ------- | -------------- | :-------: | ----------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| records | Array\<object> |     Y     | Array of records to group                 |         | A TypeError is thrown if `records` is not an array with at least one element                                                       |
+| getKeys | Function       |     Y     | Function to generate keys for each record |         | Should take a record as the sole param, and return a single key or array of keys; signature is `getKeys(record: object): Array<T>` |
 
 #### Return value
 
@@ -89,7 +89,3 @@ See the tests in `lib/group-by-multi-keys.test.js` for usage examples
   - Constraint: whitelisted chars
   - Constraint: blacklisted chars
   - Constraint: symbols that can be part of a url-component (See https://stackoverflow.com/questions/695438/what-are-the-safe-characters-for-making-urls)
-
-- Improve `groupByMultiKeys`
-
-  - [Blocking v1.0.0 release] ensure temporary attrs added to records don't overwrite an existing key
