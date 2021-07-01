@@ -40,7 +40,7 @@ Look in `lib/generate-random-string.js` for the full list of symbols used
 
 #### Usage
 
-```
+```node.js
 const { generateRandomString: rsg } = require('@ack_inc/utils');
 console.log(rsg(<anything but a whole number>)); //=> throws TypeError
 console.log(rsg(0)); //=> ""
@@ -112,7 +112,7 @@ Any other characters will appear as-is in the returned string
 
 #### Usage
 
-```
+```nodejs
 const { formatMobileNumber: format } = require('@ack_inc/utils');
 console.log(format(<anything but a mobile number with country code>)); //=> throws Error
 
@@ -131,4 +131,6 @@ expect(format(mobile, "+C (A) S-R")).toEqual("+1 (123) 456-7890");
 
   - Constraint: whitelisted chars
   - Constraint: blacklisted chars
-  - Constraint: symbols that can be part of a url-component (See https://stackoverflow.com/questions/695438/what-are-the-safe-characters-for-making-urls)
+  - Constraint: symbols that can be part of a url-component (See [SO answer](1))
+
+[1]: https://stackoverflow.com/questions/695438/what-are-the-safe-characters-for-making-urls
