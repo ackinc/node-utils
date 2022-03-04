@@ -123,6 +123,35 @@ expect(format(mobile, "+C A S R")).toEqual("+1 123 456 7890");
 expect(format(mobile, "+C (A) S-R")).toEqual("+1 (123) 456-7890");
 ```
 
+---
+
+### buildArr(n, generatorFn)
+
+Format a mobile number (must include country code) in different ways
+
+#### Parameters
+
+| Name        | Type     | Required? | Description                                                            | Default | Comments |
+| ----------- | -------- | :-------: | ---------------------------------------------------------------------- | ------- | -------- |
+| n           | number   |     Y     | The number of elements in the created array                            |         |          |
+| generatorFn | function |     N     | Function that controls the values of the elements in the created array | x => x  |          |
+
+#### Return value
+
+| Type  | Description     |
+| ----- | --------------- |
+| array | The built array |
+
+#### Usage
+
+```nodejs
+const { buildArr } = require('@ack_inc/utils');
+
+expect(buildArr(0)).toEqual([]);
+expect(buildArr(2)).toEqual([0, 1]);
+expect(buildArr(2, idx => idx + 1)).toEqual([1, 2]);
+```
+
 ## To Do
 
 - Automated documentation generation
