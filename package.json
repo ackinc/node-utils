@@ -33,5 +33,6 @@
     "group-by multiple keys",
     "mobile number formatter",
     "format mobile number"
-  ]
+  ],
+  "dependencies": {}
 }
