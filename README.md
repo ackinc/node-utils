@@ -152,6 +152,31 @@ expect(buildArr(2)).toEqual([0, 1]);
 expect(buildArr(2, idx => idx + 1)).toEqual([1, 2]);
 ```
 
+---
+
+### groupBy(records, groupFn)
+
+Group records according to groupFn
+
+#### Parameters
+
+| Name    | Type            | Required? | Description                                                           | Default         | Comments |
+| ------- | --------------- | :-------: | --------------------------------------------------------------------- | --------------- | -------- |
+| records | Array\<record\> |     Y     | The records to be grouped                                             |                 |          |
+| groupFn | function        |     N     | Function that determines whether two records belong in the same group | (a, b) => false |          |
+
+A `record` is any object with an `id` key
+
+#### Return value
+
+| Type                     | Description                                       |
+| ------------------------ | ------------------------------------------------- |
+| Array\<Array\<record\>\> | Each sub-array in the returned array is one group |
+
+#### Usage
+
+- See group-by.test.js
+
 ## To Do
 
 - Automated documentation generation
