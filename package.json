@@ -1,6 +1,6 @@
 {
   "name": "@ack_inc/utils",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A collection of utility functions I find myself needing across multiple projects",
   "license": "MIT",
   "author": "Anirudh Nimmagadda <anirudh.nimmagadda@gmail.com>",

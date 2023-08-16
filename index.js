@@ -2,6 +2,7 @@ const formatMobileNumber = require("./lib/format-mobile-number");
 const generateRandomString = require("./lib/generate-random-string");
 const groupBy = require("./lib/group-by");
 const groupByMultiKeys = require("./lib/group-by-multi-keys");
+const interpolateString = require("./lib/interpolate-string");
 
 function buildArr(n, generatorFn = (x) => x) {
   const ret = [];
@@ -15,4 +16,5 @@ module.exports = {
   generateRandomString,
   groupBy,
   groupByMultiKeys,
+  interpolateString,
 };
