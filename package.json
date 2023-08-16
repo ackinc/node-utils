@@ -1,11 +1,11 @@
 {
   "name": "@ack_inc/utils",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "A collection of utility functions I find myself needing across multiple projects",
   "license": "MIT",
   "author": "Anirudh Nimmagadda <anirudh.nimmagadda@gmail.com>",
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   },
   "repository": {
     "type": "git",
@@ -32,7 +32,8 @@
     "group by multiple keys",
     "group-by multiple keys",
     "mobile number formatter",
-    "format mobile number"
+    "format mobile number",
+    "interpolate string"
   ],
   "dependencies": {}
 }
